@@ -14,7 +14,7 @@ namespace HelloUSharp
         public float GetTotalSum(float N)
         {
             float result = 0;
-            for (int i = 1; i < N; i++)
+            for (int i = 1; i <= N; i++)
             {
                 result += SumN(i);
             }
@@ -27,7 +27,53 @@ namespace HelloUSharp
             float _temp = 0;
             for (int i = 1; i <= n; i++)
             {
-                _temp += 1;
+                _temp += i;
+            }
+            return _temp;
+        }
+
+        [UFunction, BlueprintCallable]
+        public float GetTotalSumFromOwner(float N)
+        {
+            float result = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                result += GetOwnerSumNTest(i);
+            }
+            return result;
+        }
+
+        [UFunction, BlueprintCallable]
+        public float GetOwnerSumNTest(float n)
+        {
+            float _temp = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                _temp += GetOwner().GetActorLocation().X;
+            }
+            return _temp;
+        }
+
+        AActor myOwner;
+        [UFunction, BlueprintCallable]
+        public float GetTotalSumFromCachedOwner(float N)
+        {
+            myOwner = GetOwner();
+            float result = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                result += CacheOwnerSumNTest(i);
+            }
+            return result;
+        }
+
+        [UFunction, BlueprintCallable]
+        public float CacheOwnerSumNTest(float n)
+        {
+            float _temp = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                _temp += myOwner.GetActorLocation().X;
             }
             return _temp;
         }

@@ -35,7 +35,7 @@ void UTestPerformanceComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 float UTestPerformanceComponent::GetTotalSum(float N) 
 {
 	float result = 0;
-	for (int i = 1; i < N; i++)
+	for (int i = 1; i <= N; i++)
 	{
 		result += SumN(i);
 	}
@@ -47,7 +47,27 @@ float UTestPerformanceComponent::SumN(float n)
 	float _temp = 0;
 	for (int i = 1; i <= n; i++)
 	{
-		_temp += 1;
+		_temp += i;
+	}
+	return _temp;
+}
+
+float UTestPerformanceComponent::GetTotalSumFromOwner(float N)
+{
+	float result = 0;
+	for (int i = 1; i <= N; i++)
+	{
+		result += GetOwnerSumNTest(i);
+	}
+	return result;
+}
+
+float UTestPerformanceComponent::GetOwnerSumNTest(float n)
+{
+	float _temp = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		_temp += GetOwner()->GetActorLocation().X;
 	}
 	return _temp;
 }

@@ -1,0 +1,25 @@
+Norm Test
+Number Of Loops - 50
+BP - Mostly 4ms Sometimes 3ms
+CPP - Mostly 0ms, Rarely 1ms
+CSharp - First Time 6-7ms, After That 0-1ms
+
+Number Of Loops - 500
+BP - 310-312ms Result: 20958500.0
+CPP - 0ms Result: 20958500.0
+CSharp - 0-1ms Result: 20958500.0
+
+Number Of Loops - 5000
+BP
+CPP - 9-12ms 
+CSharp - 1ms
+
+Get Owner Test
+Number Of Loops - 10
+BP
+CPP - 0.0ms - result: -53350.0
+CSharp - First: 29ms, After That: 0.0 ms - result: -53350.0
+Number Of Loops - 200
+CPP - 0.0ms
+CSharp - First: 49ms, Rest: 25-27ms
+CSharp Cached - First: 39ms, Rest: 13-14ms
