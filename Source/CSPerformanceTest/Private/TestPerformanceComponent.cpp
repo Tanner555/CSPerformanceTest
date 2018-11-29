@@ -1,7 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TestPerformanceComponent.h"
-
+#include "GameFramework/Actor.h"
+#include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
 UTestPerformanceComponent::UTestPerformanceComponent()
@@ -71,3 +73,15 @@ float UTestPerformanceComponent::GetOwnerSumNTest(float n)
 	}
 	return _temp;
 }
+
+//void UTestPerformanceComponent::TestMethod1()
+//{
+//	//auto _owner = GetOwner();
+//	//if (ensure(_owner != nullptr)) {
+//	//	auto _pos = _owner->GetActorLocation();
+//	//	auto _player = UGameplayStatics::GetPlayerPawn(this, 0);
+//
+//	//}
+//	//auto _r = GetOwner()->GetActorRotation();
+//	//_r.Add
+//}

@@ -32,4 +32,6 @@ public:
 	float GetTotalSumFromOwner(float N);
 	UFUNCTION(BlueprintCallable, Category = "Test Performance")
 	float GetOwnerSumNTest(float n);
+	//UFUNCTION(BlueprintCallable, Category = "Test Performance")
+	//void TestMethod1();
 };
